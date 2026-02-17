@@ -30,7 +30,7 @@ export function ChatInterface({
       />
 
       {/* Chat interface */}
-      <div className="fixed bottom-24 right-6 w-96 h-[600px] bg-[#2a3a36] rounded-2xl shadow-2xl z-40 flex flex-col animate-slide-in-bottom-right max-sm:inset-0 max-sm:bottom-0 max-sm:right-0 max-sm:w-full max-sm:h-full max-sm:rounded-none">
+      <div className="fixed bottom-24 right-6 w-96 h-[600px] bg-surface-secondary rounded-2xl shadow-2xl z-40 flex flex-col animate-slide-in-bottom-right max-sm:inset-0 max-sm:bottom-0 max-sm:right-0 max-sm:w-full max-sm:h-full max-sm:rounded-none">
         <ChatHeader onClose={onClose} />
         <ChatMessages messages={messages} isLoading={isLoading} />
         <ChatInput

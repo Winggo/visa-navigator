@@ -2,14 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* Dark theme (default) */
+:root,
+.dark {
   --background: #374B46;
   --foreground: #ffffff;
+
+  --bg-primary:    #374B46;
+  --bg-secondary:  #2a3a36;
+  --bg-tertiary:   #1a2a26;
+  --bg-input:      #2a3a36;
+  --bg-disabled:   #1f2f2b;
+
+  --text-primary:   #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted:     #9ca3af;
+
+  --border-primary:   #374151;
+  --border-secondary: #4b5563;
+
+  --badge-green-bg:   rgba(34, 197, 94, 0.15);
+  --badge-green-text: #86efac;
+  --badge-blue-bg:    rgba(59, 130, 246, 0.15);
+  --badge-blue-text:  #93c5fd;
+  --badge-gray-bg:    rgba(107, 114, 128, 0.15);
+  --badge-gray-text:  #9ca3af;
+
+  --notice-bg:      rgba(55, 75, 70, 0.6);
+  --notice-border:  #374151;
+  --notice-text:    #d1d5db;
+  --notice-heading: #ffffff;
+
+  --success-bg:      rgba(34, 197, 94, 0.12);
+  --success-border:  rgba(34, 197, 94, 0.3);
+  --success-text:    #86efac;
+  --success-heading: #bbf7d0;
+
+  --progress-track: #374151;
+  --chat-bot-bg:    #2a3a36;
+}
+
+/* Light theme */
+.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+
+  --bg-primary:    #f8fafc;
+  --bg-secondary:  #ffffff;
+  --bg-tertiary:   #f1f5f9;
+  --bg-input:      #ffffff;
+  --bg-disabled:   #f1f5f9;
+
+  --text-primary:   #0f172a;
+  --text-secondary: #475569;
+  --text-muted:     #64748b;
+
+  --border-primary:   #e2e8f0;
+  --border-secondary: #cbd5e1;
+
+  --badge-green-bg:   #dcfce7;
+  --badge-green-text: #15803d;
+  --badge-blue-bg:    #dbeafe;
+  --badge-blue-text:  #1d4ed8;
+  --badge-gray-bg:    #f3f4f6;
+  --badge-gray-text:  #374151;
+
+  --notice-bg:      #f8fafc;
+  --notice-border:  #e2e8f0;
+  --notice-text:    #475569;
+  --notice-heading: #0f172a;
+
+  --success-bg:      #dcfce7;
+  --success-border:  #bbf7d0;
+  --success-text:    #15803d;
+  --success-heading: #166534;
+
+  --progress-track: #e2e8f0;
+  --chat-bot-bg:    #f1f5f9;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--text-primary);
+  background: var(--bg-primary);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 

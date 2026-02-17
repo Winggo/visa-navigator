@@ -59,7 +59,7 @@ export function NumberQuestion({
     <div>
       <div className="flex items-baseline">
         {isCurrency && (
-          <span className="text-2xl md:text-3xl font-light text-gray-400 mr-2">
+          <span className="text-2xl md:text-3xl font-light text-content-muted mr-2">
             $
           </span>
         )}
@@ -72,19 +72,19 @@ export function NumberQuestion({
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
           className={`
-            flex-1 bg-transparent border-b-2 border-gray-600
+            flex-1 bg-transparent border-b-2 border-border-secondary
             focus:border-[#D97757] focus:outline-none
-            text-2xl md:text-3xl font-light text-white
-            placeholder:text-gray-500
+            text-2xl md:text-3xl font-light text-content-primary
+            placeholder:text-content-muted
             transition-colors duration-200
             py-2
           `}
         />
         {isCurrency && (
-          <span className="text-lg text-gray-400 ml-2">USD / year</span>
+          <span className="text-lg text-content-muted ml-2">USD / year</span>
         )}
         {!isCurrency && (
-          <span className="text-lg text-gray-400 ml-2">years</span>
+          <span className="text-lg text-content-muted ml-2">years</span>
         )}
       </div>
       <div className="mt-4 flex items-center gap-4">
@@ -93,7 +93,7 @@ export function NumberQuestion({
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#D97757] text-white rounded-lg hover:bg-[#C86647] transition-colors font-medium"
         >
           OK
-          <span className="text-gray-300 text-sm flex items-center gap-1">
+          <span className="text-content-secondary text-sm flex items-center gap-1">
             press Enter <span className="text-lg">↵</span>
           </span>
         </button>

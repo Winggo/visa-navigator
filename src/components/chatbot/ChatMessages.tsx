@@ -9,9 +9,9 @@ interface ChatMessagesProps {
 function LoadingIndicator() {
   return (
     <div className="flex gap-1">
-      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+      <div className="w-2 h-2 bg-content-muted rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+      <div className="w-2 h-2 bg-content-muted rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+      <div className="w-2 h-2 bg-content-muted rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
     </div>
   );
 }
@@ -35,7 +35,7 @@ export function ChatMessages({ messages, isLoading }: ChatMessagesProps) {
             className={`max-w-[80%] rounded-lg p-3 ${
               message.role === 'user'
                 ? 'bg-[#D97757] text-white'
-                : 'bg-[#374B46] text-gray-100'
+                : 'bg-chat-bot-bg text-content-primary'
             }`}
           >
             <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
@@ -44,7 +44,7 @@ export function ChatMessages({ messages, isLoading }: ChatMessagesProps) {
       ))}
       {isLoading && (
         <div className="flex justify-start">
-          <div className="max-w-[80%] rounded-lg p-3 bg-[#374B46]">
+          <div className="max-w-[80%] rounded-lg p-3 bg-chat-bot-bg">
             <LoadingIndicator />
           </div>
         </div>

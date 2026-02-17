@@ -76,7 +76,7 @@ export function MultiSelectQuestion({
                 ${
                   isSelected
                     ? "border-[#D97757] bg-[#D97757]"
-                    : "border-gray-600 hover:border-[#D97757]"
+                    : "border-border-secondary hover:border-[#D97757]"
                 }
               `}
             >
@@ -86,7 +86,7 @@ export function MultiSelectQuestion({
                   ${
                     isSelected
                       ? "border-[#D97757] bg-[#D97757] text-white"
-                      : "border-gray-500 text-gray-400"
+                      : "border-border-secondary text-content-muted"
                   }
                 `}
               >
@@ -109,7 +109,7 @@ export function MultiSelectQuestion({
                 )}
               </span>
               <span
-                className={`text-lg ${isSelected ? "text-white" : "text-gray-300"}`}
+                className={`text-lg ${isSelected ? "text-white" : "text-content-secondary"}`}
               >
                 {option.label}
               </span>
@@ -127,26 +127,26 @@ export function MultiSelectQuestion({
             ${
               value.length > 0
                 ? "bg-[#D97757] text-white hover:bg-[#C86647]"
-                : "bg-gray-800 text-gray-500 cursor-not-allowed"
+                : "bg-surface-disabled text-content-muted cursor-not-allowed"
             }
           `}
         >
           OK
           <span
-            className={`text-sm ${value.length > 0 ? "text-gray-300" : "text-gray-600"}`}
+            className={`text-sm ${value.length > 0 ? "text-content-secondary" : "text-content-muted"}`}
           >
             {value.length} selected
           </span>
         </button>
       </div>
 
-      <p className="mt-3 text-gray-400 text-sm">
+      <p className="mt-3 text-content-muted text-sm">
         Press{" "}
-        <span className="font-mono bg-gray-700 px-1 rounded">A</span>-
-        <span className="font-mono bg-gray-700 px-1 rounded">
+        <span className="font-mono bg-surface-tertiary px-1 rounded">A</span>-
+        <span className="font-mono bg-surface-tertiary px-1 rounded">
           {String.fromCharCode(64 + options.length)}
         </span>{" "}
-        to select, <span className="font-mono bg-gray-700 px-1 rounded">Enter</span>{" "}
+        to select, <span className="font-mono bg-surface-tertiary px-1 rounded">Enter</span>{" "}
         to continue
       </p>
     </div>

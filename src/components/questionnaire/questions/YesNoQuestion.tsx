@@ -68,7 +68,7 @@ export function YesNoQuestion({
             ${
               value === true
                 ? "border-[#D97757] bg-[#D97757] text-white"
-                : "border-gray-600 text-gray-300 hover:border-[#D97757]"
+                : "border-border-secondary text-content-secondary hover:border-[#D97757]"
             }
           `}
         >
@@ -76,7 +76,7 @@ export function YesNoQuestion({
             <span
               className={`
               w-6 h-6 rounded border-2 flex items-center justify-center text-sm font-bold
-              ${value === true ? "border-[#D97757] bg-[#D97757] text-white" : "border-gray-500"}
+              ${value === true ? "border-[#D97757] bg-[#D97757] text-white" : "border-border-secondary"}
             `}
             >
               Y
@@ -91,7 +91,7 @@ export function YesNoQuestion({
             ${
               value === false
                 ? "border-[#D97757] bg-[#D97757] text-white"
-                : "border-gray-600 text-gray-300 hover:border-[#D97757]"
+                : "border-border-secondary text-content-secondary hover:border-[#D97757]"
             }
           `}
         >
@@ -99,7 +99,7 @@ export function YesNoQuestion({
             <span
               className={`
               w-6 h-6 rounded border-2 flex items-center justify-center text-sm font-bold
-              ${value === false ? "border-[#D97757] bg-[#D97757] text-white" : "border-gray-500"}
+              ${value === false ? "border-[#D97757] bg-[#D97757] text-white" : "border-border-secondary"}
             `}
             >
               N
@@ -120,10 +120,10 @@ export function YesNoQuestion({
             placeholder={followUpPlaceholder}
             rows={3}
             className={`
-              w-full bg-transparent border-b-2 border-gray-600
+              w-full bg-transparent border-b-2 border-border-secondary
               focus:border-[#D97757] focus:outline-none
-              text-xl font-light text-white
-              placeholder:text-gray-500
+              text-xl font-light text-content-primary
+              placeholder:text-content-muted
               transition-colors duration-200
               py-2 resize-none
             `}
@@ -134,16 +134,16 @@ export function YesNoQuestion({
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#D97757] text-white rounded-lg hover:bg-[#C86647] transition-colors font-medium"
             >
               OK
-              <span className="text-gray-300 text-sm">press Cmd + Enter</span>
+              <span className="text-content-secondary text-sm">press Cmd + Enter</span>
             </button>
           </div>
         </div>
       )}
 
       {value === null && (
-        <p className="mt-4 text-gray-400 text-sm">
-          Press <span className="font-mono bg-gray-700 px-1 rounded">Y</span> for
-          Yes or <span className="font-mono bg-gray-700 px-1 rounded">N</span>{" "}
+        <p className="mt-4 text-content-muted text-sm">
+          Press <span className="font-mono bg-surface-tertiary px-1 rounded">Y</span> for
+          Yes or <span className="font-mono bg-surface-tertiary px-1 rounded">N</span>{" "}
           for No
         </p>
       )}

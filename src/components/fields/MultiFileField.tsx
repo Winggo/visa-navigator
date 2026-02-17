@@ -39,7 +39,7 @@ export function MultiFileField({ field, value, onChange, error, disabled }: Mult
 
   return (
     <div className="w-full space-y-3">
-      <label className="block text-sm font-medium text-gray-300">
+      <label className="block text-sm font-medium text-content-secondary">
         {field.label}
         {field.required && <span className="text-red-500 ml-1">*</span>}
       </label>
@@ -61,11 +61,11 @@ export function MultiFileField({ field, value, onChange, error, disabled }: Mult
           {files.map((fileName, index) => (
             <div
               key={index}
-              className="flex items-center justify-between p-3 bg-[#1a2a26] rounded border border-gray-700"
+              className="flex items-center justify-between p-3 bg-surface-tertiary rounded border border-border-primary"
             >
               <div className="flex items-center gap-2 flex-1 min-w-0">
                 <svg
-                  className="w-5 h-5 text-gray-400 flex-shrink-0"
+                  className="w-5 h-5 text-content-muted flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ export function MultiFileField({ field, value, onChange, error, disabled }: Mult
                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   />
                 </svg>
-                <span className="text-sm text-gray-300 truncate">{fileName}</span>
+                <span className="text-sm text-content-secondary truncate">{fileName}</span>
               </div>
               {!disabled && (
                 <Button
@@ -107,7 +107,7 @@ export function MultiFileField({ field, value, onChange, error, disabled }: Mult
       )}
 
       {field.hint && !error && (
-        <p className="text-sm text-gray-400">{field.hint}</p>
+        <p className="text-sm text-content-muted">{field.hint}</p>
       )}
       {error && <p className="text-sm text-red-500">{error}</p>}
     </div>

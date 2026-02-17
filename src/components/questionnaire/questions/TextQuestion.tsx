@@ -36,10 +36,10 @@ export function TextQuestion({
   };
 
   const baseClassName = `
-    w-full bg-transparent border-b-2 border-gray-600
+    w-full bg-transparent border-b-2 border-border-secondary
     focus:border-[#D97757] focus:outline-none
-    text-2xl md:text-3xl font-light text-white
-    placeholder:text-gray-500
+    text-2xl md:text-3xl font-light text-content-primary
+    placeholder:text-content-muted
     transition-colors duration-200
     py-2
   `;
@@ -62,7 +62,7 @@ export function TextQuestion({
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#D97757] text-white rounded-lg hover:bg-[#C86647] transition-colors font-medium"
           >
             OK
-            <span className="text-gray-300 text-sm">
+            <span className="text-content-secondary text-sm">
               press Cmd + Enter
             </span>
           </button>

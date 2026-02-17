@@ -19,7 +19,7 @@ export function ProgressDots({ current, total }: ProgressDotsProps) {
               rounded-full transition-all duration-300
               ${isCurrent ? "w-6 h-2 bg-[#D97757]" : "w-2 h-2"}
               ${isCompleted ? "bg-[#D97757]" : ""}
-              ${!isCompleted && !isCurrent ? "bg-gray-700" : ""}
+              ${!isCompleted && !isCurrent ? "bg-progress-track" : ""}
             `}
           />
         );

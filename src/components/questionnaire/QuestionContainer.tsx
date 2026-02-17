@@ -36,11 +36,11 @@ export function QuestionContainer({
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-[#374B46] flex flex-col"
+      className="min-h-screen bg-surface-primary flex flex-col"
       tabIndex={-1}
     >
       {/* Progress bar at top */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-800 z-10">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-progress-track z-10">
         <div
           className="h-full bg-[#D97757] transition-all duration-500 ease-out"
           style={{ width: `${(questionNumber / totalQuestions) * 100}%` }}
@@ -51,7 +51,7 @@ export function QuestionContainer({
       {showPrev && onPrev && questionNumber > 1 && (
         <button
           onClick={onPrev}
-          className="fixed top-6 left-6 p-2 text-gray-400 hover:text-gray-300 transition-colors z-10"
+          className="fixed top-6 left-6 p-2 text-content-muted hover:text-content-secondary transition-colors z-10"
           aria-label="Previous question"
         >
           <svg
@@ -81,11 +81,11 @@ export function QuestionContainer({
         >
           {/* Question number */}
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-gray-400 font-medium">
+            <span className="text-content-muted font-medium">
               {questionNumber}
             </span>
             <svg
-              className="w-4 h-4 text-gray-400"
+              className="w-4 h-4 text-content-muted"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -100,13 +100,13 @@ export function QuestionContainer({
           </div>
 
           {/* Question text */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-3 leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-content-primary mb-3 leading-tight">
             {question}
           </h1>
 
           {/* Subtext */}
           {subtext && (
-            <p className="text-gray-300 text-lg mb-8">{subtext}</p>
+            <p className="text-content-secondary text-lg mb-8">{subtext}</p>
           )}
 
           {/* Input area */}

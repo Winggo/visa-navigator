@@ -165,7 +165,7 @@ export default function EvidencePage() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-border-secondary" />
       </div>
     );
   }
@@ -174,7 +174,7 @@ export default function EvidencePage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-400 mb-4">Criteria not found</p>
+          <p className="text-content-muted mb-4">Criteria not found</p>
           <Button onClick={() => router.push(`/dashboard/${caseId}?token=${token}`)}>
             Back to Dashboard
           </Button>
@@ -187,13 +187,13 @@ export default function EvidencePage() {
   const isSubmitted = caseData?.status === "submitted";
 
   return (
-    <div className="min-h-screen bg-[#374B46]">
+    <div className="min-h-screen bg-surface-primary">
       {/* Header */}
-      <header className="bg-[#2a3a36] border-b border-gray-700">
+      <header className="bg-surface-secondary border-b border-border-primary">
         <div className="max-w-3xl mx-auto px-4 py-6">
           <button
             onClick={() => router.push(`/dashboard/${caseId}?token=${token}`)}
-            className="flex items-center text-gray-300 hover:text-white mb-4"
+            className="flex items-center text-content-secondary hover:text-content-primary mb-4"
           >
             <svg
               className="w-5 h-5 mr-1"
@@ -210,20 +210,20 @@ export default function EvidencePage() {
             </svg>
             Back to Dashboard
           </button>
-          <h1 className="text-2xl font-bold text-white">
+          <h1 className="text-2xl font-bold text-content-primary">
             {criteriaConfig.name}
           </h1>
-          <p className="text-gray-300 mt-1">{criteriaConfig.fullDescription}</p>
+          <p className="text-content-secondary mt-1">{criteriaConfig.fullDescription}</p>
         </div>
       </header>
 
       {/* Help text */}
       <div className="max-w-3xl mx-auto px-4 py-6">
         {isSubmitted && (
-          <div className="bg-green-100 border border-green-200 rounded-xl p-4 mb-6">
+          <div className="bg-success-bg border border-success-border rounded-xl p-4 mb-6">
             <div className="flex items-start gap-3">
               <svg
-                className="w-5 h-5 text-green-600 mt-0.5 shrink-0"
+                className="w-5 h-5 text-success-text mt-0.5 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -236,8 +236,8 @@ export default function EvidencePage() {
                 />
               </svg>
               <div>
-                <h3 className="font-medium text-green-800">Case Submitted</h3>
-                <p className="text-green-700 text-sm mt-1">
+                <h3 className="font-medium text-success-heading">Case Submitted</h3>
+                <p className="text-success-text text-sm mt-1">
                   This case has been submitted and can no longer be edited.
                 </p>
               </div>
@@ -246,10 +246,10 @@ export default function EvidencePage() {
         )}
 
         {!isSubmitted && (
-          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-6">
+          <div className="bg-notice-bg border border-notice-border rounded-xl p-4 mb-6">
             <div className="flex items-start gap-3">
               <svg
-                className="w-5 h-5 text-gray-600 mt-0.5 shrink-0"
+                className="w-5 h-5 text-content-muted mt-0.5 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -262,15 +262,15 @@ export default function EvidencePage() {
                 />
               </svg>
               <div>
-                <h3 className="font-medium text-gray-800">Tips for Strong Evidence</h3>
-                <p className="text-gray-700 text-sm mt-1">{criteriaConfig.helpText}</p>
+                <h3 className="font-medium text-notice-heading">Tips for Strong Evidence</h3>
+                <p className="text-notice-text text-sm mt-1">{criteriaConfig.helpText}</p>
               </div>
             </div>
           </div>
         )}
 
         {/* Form */}
-        <div className="bg-[#2a3a36] rounded-xl shadow-sm border border-gray-700 p-6">
+        <div className="bg-surface-secondary rounded-xl shadow-sm border border-border-primary p-6">
           <div className="space-y-6">
             {criteriaConfig.fields.map((field: FieldConfig) => (
               <FieldRenderer

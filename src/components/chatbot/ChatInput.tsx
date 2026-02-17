@@ -26,7 +26,7 @@ export function ChatInput({ onSendMessage, disabled, error, onClearError }: Chat
   };
 
   return (
-    <div className="p-4 border-t border-gray-700">
+    <div className="p-4 border-t border-border-primary">
       {error && (
         <div className="mb-3 p-3 bg-red-900/30 border border-red-700 rounded-lg flex items-start justify-between">
           <p className="text-red-300 text-sm">{error}</p>
@@ -60,7 +60,7 @@ export function ChatInput({ onSendMessage, disabled, error, onClearError }: Chat
           placeholder="Type your question..."
           disabled={disabled}
           rows={1}
-          className="flex-1 bg-[#374B46] text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#D97757] resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 bg-surface-primary text-content-primary rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#D97757] resize-none disabled:opacity-50 disabled:cursor-not-allowed"
         />
         <button
           onClick={handleSend}

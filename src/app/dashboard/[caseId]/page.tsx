@@ -60,19 +60,19 @@ function CriteriaSection({
       disabled={disabled}
       className={`
         w-full text-left p-6 rounded-xl border-2 transition-all
-        ${disabled ? "cursor-default opacity-75" : "hover:shadow-lg hover:border-gray-300"}
-        bg-[#2a3a36] border-gray-700
+        ${disabled ? "cursor-default opacity-75" : "hover:shadow-lg hover:border-border-secondary"}
+        bg-surface-secondary border-border-primary
       `}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
           {/* Header with name and status */}
           <div className="flex items-center gap-3 mb-2">
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="text-xl font-semibold text-content-primary">
               {criteriaConfig.name}
             </h3>
             {status === "completed" ? (
-              <span className="inline-flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+              <span className="inline-flex items-center gap-1 px-2 py-1 bg-badge-green-bg text-badge-green-text text-sm rounded-full">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -89,29 +89,29 @@ function CriteriaSection({
                 Completed
               </span>
             ) : status === "in_progress" ? (
-              <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">
+              <span className="inline-flex items-center gap-1 px-2 py-1 bg-badge-blue-bg text-badge-blue-text text-sm rounded-full">
                 In Progress
               </span>
             ) : (
-              <span className="inline-flex items-center px-2 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">
+              <span className="inline-flex items-center px-2 py-1 bg-badge-gray-bg text-badge-gray-text text-sm rounded-full">
                 Not started
               </span>
             )}
           </div>
 
           {/* Description */}
-          <p className="text-gray-300 mb-3">{criteriaConfig.shortDescription}</p>
+          <p className="text-content-secondary mb-3">{criteriaConfig.shortDescription}</p>
 
           {/* AI Reasoning */}
-          <div className="bg-gray-50 rounded-lg p-3 mb-3">
-            <p className="text-sm text-gray-800">
+          <div className="bg-notice-bg rounded-lg p-3 mb-3">
+            <p className="text-sm text-notice-text">
               <span className="font-medium">AI Analysis: </span>
               {recommendation.reasoning}
             </p>
           </div>
 
           {/* Evidence required */}
-          <div className="text-sm text-gray-300">
+          <div className="text-sm text-content-secondary">
             <span className="font-medium">Evidence needed: </span>
             {criteriaConfig.fields.filter((f) => f.required).length} required
             fields
@@ -130,13 +130,13 @@ function CriteriaSection({
           >
             {recommendation.score}%
           </div>
-          <div className="text-xs text-gray-500 mt-1">Match Score</div>
+          <div className="text-xs text-content-muted mt-1">Match Score</div>
         </div>
       </div>
 
       {/* Click hint */}
       {!disabled && (
-        <div className="mt-4 flex items-center text-gray-400 text-sm font-medium">
+        <div className="mt-4 flex items-center text-content-muted text-sm font-medium">
           {status === "completed"
             ? "View submitted evidence"
             : status === "in_progress"
@@ -228,17 +228,17 @@ export default function DashboardPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#374B46] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-600" />
+      <div className="min-h-screen bg-surface-primary flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-border-secondary" />
       </div>
     );
   }
 
   if (!caseData || caseData.recommendedCriteria.length === 0) {
     return (
-      <div className="min-h-screen bg-[#374B46] flex items-center justify-center">
+      <div className="min-h-screen bg-surface-primary flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-400 mb-4">No recommendations found</p>
+          <p className="text-content-muted mb-4">No recommendations found</p>
           <Button onClick={() => router.push("/")}>Start Over</Button>
         </div>
       </div>
@@ -252,12 +252,12 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="bg-[#2a3a36] border-b border-gray-700">
+      <header className="bg-surface-secondary border-b border-border-primary">
         <div className="max-w-4xl mx-auto px-4 py-6">
-          <h1 className="text-2xl font-bold text-white">
+          <h1 className="text-2xl font-bold text-content-primary">
             Your O-1 Case Strategy
           </h1>
-          <p className="text-gray-300 mt-1">
+          <p className="text-content-secondary mt-1">
             Based on your profile, we recommend focusing on these 3 criteria
           </p>
         </div>
@@ -266,9 +266,9 @@ export default function DashboardPage() {
       {/* Main content */}
       <main className="max-w-4xl mx-auto px-4 py-8">
         {isSubmitted ? (
-          <div className="bg-green-100 border border-green-200 rounded-xl p-6 mb-8">
+          <div className="bg-success-bg border border-success-border rounded-xl p-6 mb-8">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-success-bg rounded-full flex items-center justify-center">
                 <svg
                   className="w-6 h-6 text-green-600"
                   fill="none"
@@ -284,21 +284,21 @@ export default function DashboardPage() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-green-800">
+                <h2 className="text-lg font-semibold text-success-heading">
                   Application Submitted
                 </h2>
-                <p className="text-green-700">
+                <p className="text-success-text">
                   Your O-1 case has been submitted successfully. Your case manager will review and get back to you within 2-3 business days.
                 </p>
               </div>
             </div>
           </div>
         ) : (
-          <div className="bg-green-100 border border-gray-200 rounded-xl p-6 mb-8">
+          <div className="bg-notice-bg border border-notice-border rounded-xl p-6 mb-8">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 bg-notice-bg rounded-full flex items-center justify-center shrink-0">
                 <svg
-                  className="w-5 h-5 text-gray-600"
+                  className="w-5 h-5 text-content-muted"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -312,10 +312,10 @@ export default function DashboardPage() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-gray-800">
+                <h2 className="text-lg font-semibold text-notice-heading">
                   Next Steps
                 </h2>
-                <p className="text-gray-700">
+                <p className="text-notice-text">
                   Click on each section below to submit your evidence. Once all
                   3 criteria are complete, you can submit your application.
                 </p>
@@ -326,7 +326,7 @@ export default function DashboardPage() {
 
         {/* Progress indicator */}
         <div className="mb-6 flex items-center gap-4">
-          <div className="flex-1 bg-gray-200 rounded-full h-2">
+          <div className="flex-1 bg-progress-track rounded-full h-2">
             <div
               className="bg-[#D97757] rounded-full h-2 transition-all duration-500"
               style={{
@@ -334,7 +334,7 @@ export default function DashboardPage() {
               }}
             />
           </div>
-          <span className="text-sm text-gray-300 shrink-0">
+          <span className="text-sm text-content-secondary shrink-0">
             {caseData.completedCriteria.length} of{" "}
             {caseData.recommendedCriteria.length} complete
           </span>

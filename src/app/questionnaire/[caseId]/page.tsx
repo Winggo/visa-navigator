@@ -244,26 +244,26 @@ export default function QuestionnairePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#374B46] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-600" />
+      <div className="min-h-screen bg-surface-primary flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-border-secondary" />
       </div>
     );
   }
 
   if (!currentQuestion) {
     return (
-      <div className="min-h-screen bg-[#374B46] flex items-center justify-center">
-        <p className="text-gray-400">Question not found</p>
+      <div className="min-h-screen bg-surface-primary flex items-center justify-center">
+        <p className="text-content-muted">Question not found</p>
       </div>
     );
   }
 
   if (isSubmitting) {
     return (
-      <div className="min-h-screen bg-[#374B46] flex flex-col items-center justify-center gap-4">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-600" />
-        <p className="text-xl text-gray-300">Analyzing your responses...</p>
-        <p className="text-gray-400">
+      <div className="min-h-screen bg-surface-primary flex flex-col items-center justify-center gap-4">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-border-secondary" />
+        <p className="text-xl text-content-secondary">Analyzing your responses...</p>
+        <p className="text-content-muted">
           Our AI is determining the best criteria for your case
         </p>
       </div>
