@@ -1,8 +1,8 @@
-# Lighthouse Take-Home Assignment - O-1 Visa Case Builder
+# Visa Navigator
 
 An AI-powered application that guides users through building their O-1 visa case. The app analyzes your background, recommends the strongest criteria for your profile, and helps you collect evidence with intelligent assistance at every step.
 
-See [ASSIGNMENT.md](./docs/ASSIGNMENT.md) for the problem statement and requirements.
+See [GOAL.md](./docs/GOAL.md) for the problem statement and requirements.
 See [DESIGN.md](./docs/DESIGN.md) for my thought process from ideation to implementation.
 
 
@@ -143,7 +143,7 @@ src/
 
 ## Problem Analysis
 
-See [ASSIGNMENT.md](./ASSIGNMENT.md) for the original problem statement.
+See [GOAL.md](./GOAL.md) for the original problem statement.
 
 ### Assumptions About Users
 - **Stressed** - The visa process is high-stakes and confusing

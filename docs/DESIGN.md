@@ -1,11 +1,11 @@
-# Lighthouse Take-Home Assignment - My Thought Process and Implementation
+# Visa Navigator - My Thought Process and Implementation
 
-This README outlines my thought process from ideation to implementation.
+This document outlines my thought process from ideation to implementation.
 
 
 ## 1. Gather Requirements
 Goal
-Build working prototype that
+Build app that
 - Collects immigration case information
     - Use DB to store case data
 - Educates users their visa and what “good” evidence looks like
@@ -15,22 +15,9 @@ Build working prototype that
 - Bonus:
     - Demonstrates system adapts to different user profiles
         - Implement dynamic workflow page order, determined by initial user profile
-    - Handles “pushback” for case managers
-        - Add review page for case managers
-
-Evaluated on
-- Solution intuitive and helpful to confused user
-- Problem decomposition
-    - How to clarify ambiguity?
-    - What assumptions were made?
-    - How were assumptions validated?
-- Clear communication in walkthrough
-
 
 
 ## 2. Perform Research
-For case strategy, use format “[Criteria] - [Description]"
-
 O-1: Individuals with an extraordinary ability in the sciences, education, business, or athletics
 Meet 3 of 8 USCIS extraordinary ability criteria
 - Awards
@@ -98,23 +85,3 @@ Quick setup for prototyping
 - Vercel Functions
 - Firebase Firestore
 - OpenAI API
-
-
-
-## 4. Deliverables
-- Deployed link
-- Github repo
-- Video walkthrough with approach + assumptions + what to do differently
-
-Assumptions
-- user is stressed (split workflow into one component at a time, to avoid overwhelming user)
-- user is uninformed (support q&a, evaluate input using LLM)
-- user is disorganized, does not have all information all-hand (support saving progress and resuming after)
-
-
-What to do differently with more time?
-- Add authentication so only case owner can access case
-- More extensive testing
-- Check files for malicious content before allowing upload
-- Add rejection flow for case managers
-- Add email notifications to applicant and case manager
