@@ -3,7 +3,7 @@ import "./globals.css";
 import { ChatbotWidget } from "@/components/chatbot/ChatbotWidget";
 
 export const metadata: Metadata = {
-  title: "O-1 Visa Case Builder",
+  title: "Visa Navigator",
   description: "Build your O-1 visa case strategy",
 };
 
